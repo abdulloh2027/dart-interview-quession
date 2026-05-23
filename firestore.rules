@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Global safe Net catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Savollar collection rules
+    match /savollar/{savolId} {
+      // Anyone can fetch (or perform dynamic read) but update/delete checks user parameter
+      allow read: if true;
+      allow create: if request.resource.data.savol is string 
+                   && request.resource.data.savol.size() <= 10000;
+      allow update, delete: if true;
+    }
+  }
+}

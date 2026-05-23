@@ -1,0 +1,6 @@
+{
+  "name": "Dart Interview Master",
+  "description": "A study app for Dart interview questions with statistics, quiz mode, and progress tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

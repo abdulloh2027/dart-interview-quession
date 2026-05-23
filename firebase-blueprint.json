@@ -1,0 +1,51 @@
+{
+  "entities": {
+    "Savol": {
+      "title": "Savol",
+      "description": "Dasturlash savol-javobi",
+      "type": "object",
+      "properties": {
+        "raqam": {
+          "type": "integer",
+          "description": "Ketma-ketlik tartib raqami"
+        },
+        "savol": {
+          "type": "string",
+          "description": "Savol matni"
+        },
+        "javob": {
+          "type": "string",
+          "description": "Savolning to'g'ri javobi"
+        },
+        "variantlar": {
+          "type": "array",
+          "description": "Savolning chalkashtiruvchi variantlari"
+        },
+        "tushuntirish": {
+          "type": "string",
+          "description": "Savol javobi uchun tushuntirish"
+        },
+        "organilgan": {
+          "type": "boolean",
+          "description": "Tugallanganligi yoki o'rganilganlik holati"
+        },
+        "sana": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Yaratilgan sana"
+        },
+        "foydalanuvchi": {
+          "type": "string",
+          "description": "Foydalanuvchi nomi"
+        }
+      },
+      "required": ["raqam", "savol", "javob", "organilgan", "sana", "foydalanuvchi"]
+    }
+  },
+  "firestore": {
+    "savollar": {
+      "schema": "Savol",
+      "description": "Barcha foydalanuvchilarning darslik yoki amaliy savollari"
+    }
+  }
+}
